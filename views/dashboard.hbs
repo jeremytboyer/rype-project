@@ -1,13 +1,8 @@
-<h1>Dashboard</h1>
+<h1>Favorite Recipes</h1>
 
-<form action="/thought" method="POST">
-  <input name="text" type="text" placeholder="Share your thought">
-  <button>Submit</button>
-</form>
-
-<main class="thoughts">
-  {{#each thoughts}}
-    <div class="thought">
+<main class="favorites">
+  {{#each favorites}}
+    <div class="favorites">
       <p>{{text}}</p>
     </div>
   {{/each}}
