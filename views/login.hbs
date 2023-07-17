@@ -1,7 +1,8 @@
+<div class="flex justify-center items-center h-screen">
 <div class="w-full max-w-xs">
-  <form action="/login" method="POST" class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+  <form action="/login" method="POST" class="bg-white shadow-md rounded border border-gray-300 px-8 pt-6 pb-8 mb-4">
     <div class="mb-4">
-      <label class="block text-gray-700 text-sm font-bold mb-2" for="Email ">
+      <label class="block text-[#72A98F] text-sm font-bold mb-2 font-serif" for="Email ">
         Email
       </label>
       <input
@@ -9,7 +10,7 @@
         id="Email" name="email" type="text" placeholder="Email">
     </div>
     <div class="mb-6">
-      <label class="block text-gray-700 text-sm font-bold mb-2" for="password">
+      <label class="block text-[#72A98F] text-sm font-bold mb-2 font-serif" for="password">
         Password
       </label>
       <input
@@ -20,11 +21,17 @@
     <div class="flex items-center justify-between">
       <button
         class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
+      <input class="shadow appearance-none rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline" id="password" type="password" name="password" placeholder="******************">
+    </div>
+    <div class="flex items-center justify-between">
+      <button class="bg-red-400 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
         Submit
       </button>
     </div>
-  </form>
-  <p class="text-center text-gray-500 text-xs">
-    &copy;2023 RYPE. All rights reserved.
-  </p>
+  <div class="flex justify-center mt-5">
+      <p class="text-center text-[#72A98F] text-xs font-serif">
+        &copy;2023 RYPE. All rights reserved.
+      </p>
+    </div>
+  </div>
 </div>
