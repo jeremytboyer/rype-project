@@ -15,7 +15,13 @@ p {
 
 
 
-
+.hero {
+  background: url(/assets/veggies.jpg);
+  background-position: bottom;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 300px
+}
 
 
 
@@ -41,4 +47,9 @@ ul li {
 
 ul li p {
   margin: 4px;
+}
+
+.recipe-card {
+  width: 33%;
+  margin: 15px 0;
 }

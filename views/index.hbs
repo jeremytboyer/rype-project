@@ -1,4 +1,20 @@
-<h1>See What Others Are Thinking</h1>
+<section class="hero flex flex-col items-center">
+  <h1 class="text-2xl mt-4">Search recipes by ingredient</h1>
+  <input
+    type="text"
+    name="search-input"
+    id="search-input"
+    placeholder="Enter your ingredietns separated by a comma"
+  />
+  <button id="search-button" class="btn mt-2 px-10 py-2 my-0 font-bold text-sky-900 tracking-widest uppercase border-2 border-sky-900 hover:bg-sky-900 hover:text-orange-400 
+    ">Submit</button>
+
+</section>
+
+
+<main class="recipes flex p-5 flex-wrap">
+  
+</main>
 <!-- Output each user's email address, using a handlebars each loop -->
 <ul>
   {{#each thoughts}}
@@ -8,3 +24,5 @@
     </li>
   {{/each}}
 </ul>
+
+<script src="/js/search.js"></script>
