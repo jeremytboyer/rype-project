@@ -1,9 +1,12 @@
-<img src="{{recipe.image}}" alt="">
-{{recipe.title}}
+<div class="flex flex-col items-center justify-center h-screen  ">
+    <img class="text-center" src="{{recipe.image}}" alt="">
+   <p class="recipeTitle"> {{recipe.title}}</p>
+</div>
 
-
-<ul>
+<ul class="recipeUl text-center mt-0">
     {{#each recipe.extendedIngredients}}
-    <li>{{this.original}}</li>
+    <li class="recipeLi">{{this.original}}</li>
     {{/each}}
 </ul>
+
+{{!-- Add Buttons to Add to favorite if user is logged in --}}
