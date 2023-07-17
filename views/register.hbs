@@ -1,39 +1,46 @@
 <h1 class="text-center text-white"> Register Today!</h1>
 <div class="flex justify-center items-center h-screen ">
   <div class="grid grid-cols-1 md:grid-cols-2 gap-4 w-4/5 md:w-3/5 lg:w-2/5 max-w-800">
-    <form action="/register" method="POST" class="flex w-full max-w-lg bg-white">
+    <form action="/register" method="POST"
+      class="flex w-full max-w-lg bg-white shadow-md rounded border border-gray-300 px-8 pt-6 pb-8 mb-4">
       <div class="flex flex-wrap -mx-3 mb-6">
         <div class="w-full md:w-1/2 px-3">
-          <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-user-name">
+          <label class="block text-[#72A98F] text-sm font-bold mb-2 font-serif" for="Email">
             E-mail
           </label>
           <input
-            class="appearance-none block w-full bg-white text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-            id="grid-last-name" type="text" name="email" placeholder="E-mail Here">
+            class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            id="Email" type="text" name="email" placeholder="E-mail Here">
         </div>
       </div>
       <div class="flex flex-wrap -mx-3 mb-6">
         <div class="w-full px-3">
-          <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-password">
+          <label class="block text-[#72A98F] text-sm font-bold mb-2 font-serif" for="password">
             Password
           </label>
           <input
-            class="appearance-none block w-full bg-white text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-            id="grid-password" type="password" name="password" placeholder="******************">
-          <p class="text-gray-600 text-xs italic">Please make sure to make it hard to guess</p>
+            class="shadow appearance-none rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
+            id="password" type="password" name="password" placeholder="******************">
         </div>
       </div>
       <div class="md:flex md:items-center">
         <div class="md:w-1/3"></div>
         <div class="md:w-2/3">
-          <button
-            class="shadow bg-red-700 hover:bg-red-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded">
-            Submit
-          </button>
+          <div class="flex items-center">
+            <button
+              class="shadow bg-red-700 hover:bg-red-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded">
+              Submit
+            </button>
+          </div>
+          <div class="flex justify-center mt-5">
+            <p class="text-center text-[#72A98F] text-xs font-serif">
+              &copy;2023 RYPE. All rights reserved.
+            </p>
+          </div>
         </div>
       </div>
     </form>
-    <div class="flex justify-center items-center"> 
-      <img src="../public/assets/pexels-rania-alhamed-2454533.jpg" alt="Image" class="w-24 h-24">
+    <div class="flex justify-center items-center">
+      <img src="../public/assets/pexels-rania-alhamed-2454533.jpg" alt="Image">
     </div>
   </div>
