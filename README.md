@@ -3,11 +3,11 @@ This project is a Twitter Clone web application built using HTML and Tailwind CS
 
 # Table of contents
 
--[Intorduction](#introduction)
+- [Intorduction](#introduction)
 - [Features](#Features)
 - [Credit](#technologies used)
--[Setup and Installation](#setup and installation)
--[usage](#usage)
+- [Setup_and_Installation](#setup and installation)
+- [usage](#usage)
 - [Contributing](#contributing)
 - [License](#license)
 
@@ -67,6 +67,5 @@ For any inquiries, please contact me at
 
 # Pictures
 
-![Screenshot](/examples/allProducts.png)
-![Screenshot](/examples/allProducts.png)
-![Screenshot](/examples/allProducts.png)
+![Screenshot](/assests/appExamples/firstPage.png)
+![Screenshot](/assests/appExamples/optionsDisplay.png)
