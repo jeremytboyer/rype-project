@@ -1,2 +1,2 @@
-DROP DATABASE IF EXISTS user_app_example;
-CREATE DATABASE user_app_example;
+DROP DATABASE IF EXISTS rype_app_db;
+CREATE DATABASE rype_app_db;

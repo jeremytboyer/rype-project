@@ -1,0 +1,9 @@
+<img src="{{recipe.image}}" alt="">
+{{recipe.title}}
+
+
+<ul>
+    {{#each recipe.extendedIngredients}}
+    <li>{{this.original}}</li>
+    {{/each}}
+</ul>
