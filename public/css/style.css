@@ -12,12 +12,27 @@ p {
   padding: 0;
 }
 
+<<<<<<< HEAD
 
 
 
 
 
 
+=======
+
+
+
+.hero {
+  background: url(/assets/veggies.jpg);
+  background-position: bottom;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 300px
+}
+
+
+>>>>>>> b5b797d7f8fa78f2239f7136c6b736ecd854825d
 
 form {
   width: 400px;
@@ -41,4 +56,9 @@ ul li {
 
 ul li p {
   margin: 4px;
+}
+
+.recipe-card {
+  width: 33%;
+  margin: 15px 0;
 }

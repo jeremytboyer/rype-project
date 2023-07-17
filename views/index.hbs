@@ -1,20 +1,7 @@
-<h1>Search Recipes</h1>
-
-<form action="/" method="POST">
-  <input name="text" type="text" placeholder="What do you want to eat?">
-  <button>Submit</button>
-</form>
-
-{{!-- output recipes based on user search --}}
-
-<div id="recipe-gallery"></div>
-
-<div id="recipe-details" style="display: none;">
-  <h2 id="recipe-name"></h2>
-  <img id="recipe-image" src="" alt="">
-  <h3>Ingredients:</h3>
-  <ul id="recipe-ingredients">
-    {{#each Recipe}}
+<h1>See What Others Are Thinking</h1>
+<!-- Output each user's email address, using a handlebars each loop -->
+<ul>
+  {{#each thoughts}}
     <li>
       <p>{{text}}</p>
     </li>
@@ -25,3 +12,5 @@
   <h3>Nutritional Facts:</h3>
   <p id="recipe-nutrition">{{text}}</p>
 </div>
+
+<script src="/js/search.js"></script>

@@ -67,4 +67,17 @@ router.get("/login", (req, res) => {
   });
 });
 
+
+// Show a single recipe
+router.get('/recipe/:id', async (req, res) => {
+  const recipeId = req.params.id
+  const apiKey = 'bf17265d1aff42a7a5827171b8812ecd'
+  const response = await fetch(`https://api.spoonacular.com/recipes/${recipeId}/information?apiKey=${apiKey}`);
+  const recipe = await response.json()
+    
+  res.render('recipe', {
+    recipe: recipe
+  })
+})
+
 module.exports = router;
