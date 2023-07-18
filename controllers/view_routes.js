@@ -107,6 +107,13 @@ router.get("/sub", (req, res) => {
   res.render("sub");
 });
 
+router.get('/logout', (req, res) => {
+  req.session.destroy()
+
+  res.redirect('/')
+})
+
+
 router.get("*", (req, res) => {
   res.render("404");
 });
