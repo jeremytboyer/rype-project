@@ -99,4 +99,15 @@ router.get("/favorites", isAuthenticated, async (req, res) => {
 
 });
 
+router.get("/welcome", (req, res) => {
+  res.render("welcome");
+});
+
+router.get("/sub", (req, res) => {
+  res.render("sub");
+});
+
+router.get("*", (req, res) => {
+  res.render("404");
+});
 module.exports = router;
