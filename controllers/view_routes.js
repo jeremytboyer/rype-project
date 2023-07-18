@@ -1,6 +1,7 @@
 const router = require('express').Router();
 const User = require('../models/User');
 const Thought = require('../models/Thought');
+const Favorite = require('../models/Favorite');
 
 function isAuthenticated(req, res, next) {
   const isAuthenticated = req.session.user_id;
@@ -82,6 +83,21 @@ router.get('/recipe/:id', async (req, res) => {
 
 router.get("/about", (req, res) => {
   res.render("about");
+});
+
+// Show Favorites page
+router.get('/favorites', isAuthenticated, async (req, res) => {
+  const user = await User.findByPk(req.session.user_id, {
+    include: Favorite
+  });
+
+  const favorites = user.favorites.map(t => t.get({ plain: true }));
+
+  // The user IS logged in
+  res.render('favorites', {
+    favorites: favorites
+  });
+
 });
 
 module.exports = router;
