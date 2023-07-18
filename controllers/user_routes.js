@@ -26,7 +26,7 @@ router.post('/login', async (req, res) => {
     // User has been validated and now we log the user in by creating a session
     req.session.user_id = user.id;
 
-    res.redirect('/dashboard');
+    res.redirect('/favorites');
 
   } catch (err) {
     if (err.message === 'invalid_password') {
@@ -43,7 +43,7 @@ router.post('/register', async (req, res) => {
     // Creates a session and sends a cookie to the client
     req.session.user_id = newUser.id;
 
-    res.redirect('/dashboard');
+    res.redirect('/favorites');
   } catch (err) {
     const dupeEmail = err.errors.find(e => e.path === 'email');
 
@@ -83,7 +83,7 @@ router.post('/login', async (req, res) => {
 
         req.session.user_id = user.id
 
-        res.redirect('/dashboard')
+        res.redirect('/favorites')
 
     } catch(err) {
         if (err.mesaage === 'invalid_password') {

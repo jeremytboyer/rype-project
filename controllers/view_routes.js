@@ -1,101 +1,105 @@
-const router = require('express').Router();
-const User = require('../models/User');
-const Thought = require('../models/Thought');
-const Favorite = require('../models/Favorite');
+const router = require("express").Router();
+const User = require("../models/User");
+const Thought = require("../models/Thought");
+const Favorite = require("../models/Favorite");
 
 function isAuthenticated(req, res, next) {
   const isAuthenticated = req.session.user_id;
 
-  if (!isAuthenticated) return res.redirect('/login');
+  if (!isAuthenticated) return res.redirect("/login");
 
   next();
 }
 
 // Show Homepage
-router.get('/', async (req, res) => {
+router.get("/", async (req, res) => {
   let thoughts = await Thought.findAll({
-    include: User
+    include: User,
   });
 
-  thoughts = thoughts.map(t => t.get({ plain: true }));
+  thoughts = thoughts.map((t) => t.get({ plain: true }));
 
-  res.render('index', {
+  res.render("index", {
     isHome: true,
     isLoggedIn: req.session.user_id,
-    thoughts: thoughts
+    thoughts: thoughts,
   });
 });
 
 // Show Login Page
-router.get('/login', (req, res) => {
-  if (req.session.user_id) return res.redirect('/dashboard');
-
-  res.render('login', {
-    isLogin: true
-  });
-});
-
-// Show Register Page
-router.get('/register', (req, res) => {
-  if (req.session.user_id) return res.redirect('/dashboard');
-
-  res.render('register', {
-    isRegister: true
-  });
-});
-
-// Show Dashboard Page
-router.get('/dashboard', isAuthenticated, async (req, res) => {
-  const user = await User.findByPk(req.session.user_id, {
-    include: Thought
-  });
-
-  const thoughts = user.thoughts.map(t => t.get({ plain: true }));
-
-  // The user IS logged in
-  res.render('dashboard', {
-    email: user.email,
-    thoughts: thoughts
-  });
-});
-
-//Show login page
 router.get("/login", (req, res) => {
-  if (req.session.user_id) return res.redirect('/dashboard')
+  if (req.session.user_id) return res.redirect("/dashboard");
 
   res.render("login", {
     isLogin: true,
   });
 });
 
+// Show Register Page
+router.get("/register", (req, res) => {
+  if (req.session.user_id) return res.redirect("/dashboard");
+
+  res.render("register", {
+    isRegister: true,
+  });
+});
+
+// Show Dashboard Page
+router.get("/dashboard", isAuthenticated, async (req, res) => {
+  const user = await User.findByPk(req.session.user_id, {
+    include: Thought,
+  });
+
+  const thoughts = user.thoughts.map((t) => t.get({ plain: true }));
+
+  // The user IS logged in
+  res.render("dashboard", {
+    email: user.email,
+    thoughts: thoughts,
+    isLoggedIn: req.session.user_id,
+  });
+});
+
+//Show login page
+router.get("/login", (req, res) => {
+  if (req.session.user_id) return res.redirect("/dashboard");
+
+  res.render("login", {
+    isLogin: true,
+  });
+});
 
 // Show a single recipe
-router.get('/recipe/:id', async (req, res) => {
-  const recipeId = req.params.id
-  const apiKey = 'bf17265d1aff42a7a5827171b8812ecd'
-  const response = await fetch(`https://api.spoonacular.com/recipes/${recipeId}/information?apiKey=${apiKey}`);
-  const recipe = await response.json()
-    
-  res.render('recipe', {
-    recipe: recipe
-  })
-})
+router.get("/recipe/:id", async (req, res) => {
+  const recipeId = req.params.id;
+  const apiKey = "bf17265d1aff42a7a5827171b8812ecd";
+  const response = await fetch(
+    `https://api.spoonacular.com/recipes/${recipeId}/information?apiKey=${apiKey}`
+  );
+  const recipe = await response.json();
+
+  res.render("recipe", {
+    recipe: recipe,
+    isLoggedIn: req.session.user_id,
+  });
+});
 
 router.get("/about", (req, res) => {
   res.render("about");
 });
 
 // Show Favorites page
-router.get('/favorites', isAuthenticated, async (req, res) => {
+router.get("/favorites", isAuthenticated, async (req, res) => {
   const user = await User.findByPk(req.session.user_id, {
-    include: Favorite
+    include: Favorite,
   });
 
-  const favorites = user.favorites.map(t => t.get({ plain: true }));
+  const favorites = user.favorites.map((t) => t.get({ plain: true }));
 
   // The user IS logged in
-  res.render('favorites', {
-    favorites: favorites
+  res.render("favorites", {
+    favorites: favorites,
+    isLoggedIn: req.session.user_id,
   });
 
 });

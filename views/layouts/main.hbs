@@ -47,22 +47,21 @@
             <a href="/" class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium {{#if isHome}}active{{/if}}">
              <img class="h-12 w-auto" src="https://upload.wikimedia.org/wikipedia/commons/0/05/RYPE-LOGO.png" alt="RYPE Logo">
             </a>
-      {{#if email}}
-        <p>Welcome, {{email}}</p>
+      {{#if isLoggedIn}}
+        <p>Welcome, {{user.email}}</p>
+         <a href="/favorites" class="bg-gray-900 text-white rounded-md px-3 py-2 text-sm font-medium {{#if isDashboard}}active{{/if}}" aria-current="page">Favorites</a>
         <a href="/logout" class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium ">Log Out</a>
-        {{else}}
-        {{#if isLoggedIn}}
-         <a href="/dashboard" class="bg-gray-900 text-white rounded-md px-3 py-2 text-sm font-medium {{#if isDashboard}}active{{/if}}" aria-current="page">Dashboard</a>
           {{else}}
            <a href="/login" class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium {{#if isLogin}}active{{/if}}">Login</a>
           <a href="/register" class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium{{#if isRegister}}active{{/if}}">Register</a>
-        {{/if}}
-      {{/if}}
+        
+      
           </div>
         </div>
       </div>
-      <div class=" inset-y-0 right-0 flex items-center sm:static sm:inset-auto sm:ml-6 sm:pr-0 ">
-       
+       {{/if}}
+      {{#if isLoggedIn}}
+        <div class=" inset-y-0 right-0 flex items-center sm:static sm:inset-auto sm:ml-6 sm:pr-0 ">
         <!-- Profile dropdown -->
         <div class="relative ml-3 ">
           <div>
@@ -71,7 +70,8 @@
               <img class="h-8 w-8 rounded-full" src="https://img.freepik.com/free-icon/user_318-159711.jpg" alt="">
             </button>
           </div>
-
+          {{/if}}
+          
           <!--
             Dropdown menu, show/hide based on menu state.
 
