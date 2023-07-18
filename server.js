@@ -10,7 +10,7 @@ const db = require("./db/connection");
 const api_routes = require("./controllers/api_routes");
 const view_routes = require("./controllers/view_routes");
 const user_routes = require("./controllers/user_routes");
-const thought_routes = require("./controllers/thought_routes");
+
 const favorites_routes = require("./controllers/favorites_routes");
 
 const app = express();
@@ -45,10 +45,10 @@ app.use(
 );
 
 // Load Routes
-app.use("/", [api_routes, view_routes, user_routes, favorites_routes, thought_routes]);
+app.use("/", [api_routes, view_routes, user_routes, favorites_routes, ]);
 
 // Connect to the db and create all tables based off of our models
-db.sync({ force: false }).then(() => {
+db.sync({ force: true }).then(() => {
   // Start server
   app.listen(PORT, () => console.log("Server started on port %s", PORT));
 });
