@@ -1,9 +1,23 @@
-<img src="{{recipe.image}}" alt="">
-{{recipe.title}}
+<div class="flex flex-col items-center justify-center  ">
+    <img class="text-center" src="{{recipe.image}}" alt="">
+   <p class="recipeTitle"> {{recipe.title}}</p>
+</div>
 
 
-<ul>
+<ul class="recipeUl text-center mt-0">
     {{#each recipe.extendedIngredients}}
-    <li>{{this.original}}</li>
+    <li class="recipeLi">{{this.original}}</li>
     {{/each}}
 </ul>
+<p class="text-center pb-5"><a class="text-orange-500" href="{{recipe.sourceUrl}}">Click here to view the original recipe</a></p>
+
+<form action="/favorites" id="form" method="POST" class="hidden">
+    <input type="text" name="title" value="{{recipe.title}}">
+    <input type="text" name="image" value="{{recipe.image}}">
+    <input type="text" name="recipeId" value="{{recipe.id}}">
+
+</form>
+<button id="addToFav" class="shadow bg-red-700 hover:bg-red-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded">Add to Favorites</button>
+
+<script src="/js/recipe.js"></script>
+{{!-- Add Buttons to Add to favorite if user is logged in --}}
