@@ -5,7 +5,7 @@ Welcome to the Rype App! This web application is designed to bring you a delight
 
 - [Intorduction](#introduction)
 - [Features](#Features)
-- [Credit](#credit)
+- [Dependecies](#dependecies)
 - [Setup](#setup_and_installation)
 - [usage](#usage)
 - [Contributing](#contributing)
@@ -24,7 +24,7 @@ The primary objective of the Rype App is to simplify the process of finding and 
 - Ingredient-Based Search: Have some ingredients at home and don't know what to cook? Simply enter them into our search bar, and the Rype App will suggest delectable recipes that match your available ingredients.
 - Comprehensive Recipe Collection: From appetizers and main courses to desserts and beverages, our vast recipe collection covers a wide array of cuisines and cooking styles.
 
-## Credit
+## Dependecies
 
 - [Inquirer](https://www.npmjs.com/package/inquirer) - A library for creating interactive command-line interfaces (CLIs) in Node.js.
 - [mysql2](https://www.npmjs.com/package/mysql2) - Generate RFC-compliant mysql2 in JavaScript.
@@ -37,14 +37,18 @@ The primary objective of the Rype App is to simplify the process of finding and 
 
 # Setup and Installation
 
-1. Clone the repository to your local machine, https://github.com/jeremytboyer/rype-project
+- Clone the repository to your local machine by running the following command: git clone https://github.com/jeremytboyer/rype-project
+- Install all the required dependencies as suggested earlier.
+- to run the program, use the followin command :  node server.js
+ 
 
 # Usage
 
 - After opening the application in your web browser, you will see a navigation bar at the top with options for Home, Dashboard, Login, and Register.
 - If you are already logged in, you will see a "Welcome, username" message in the navigation bar along with options for Log Out and your profile dropdown.
-- You can click on "Dashboard" to view your Twitter feed, where you can see tweets from other users.
-- To post a new tweet, click on the "Home" link to go back to the home page and enter your tweet in the tweet box provided.
+- You can click on "Dashboard" to view your Rype feed, where you can see Rype from other users.
+- To post a new Rype, click on the "Home" link to go back to the home page and enter your engrediente in the Rype box provided.
+- You can have an option to add to Favorites list so next time you need it, your list eill be readily available.  
 
 # license 
 ![GitHub license](https://img.shields.io/badge/license-Apache%202.0-blue.svg)
@@ -55,7 +59,7 @@ This project is licensed under the Apache 2.0 license.
 
 # Contributing
 
-Contributions to this project are welcome. If you encounter any issues or have suggestions for improvement, please open an issue or submit a pull request.
+Contributions to this project are welcome. If you encounter any issues or have suggestions for improvement, please open an issue or submit a pull request or contact us.
 
 # Contact and Credit 
 

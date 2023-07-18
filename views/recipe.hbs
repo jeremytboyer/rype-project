@@ -1,23 +1,40 @@
-<div class="flex flex-col items-center justify-center h-screen  ">
-    <img class="text-center" src="{{recipe.image}}" alt="">
-   <p class="recipeTitle"> {{recipe.title}}</p>
+
+<!-- Container for demo purpose -->
+<div class="container my-24 mx-auto md:px-6">
+  <!-- Section: Design Block -->
+  <section class="mb-32 text-center lg:text-left">
+    <div
+      class="block rounded-lg  bg-green-200">
+      <div class="flex flex-wrap items-center">
+        <div class="block w-full shrink-0 grow-0 basis-auto lg:flex lg:w-6/12 xl:w-4/12">
+          <img src="{{recipe.image}}" alt="Trendy Pants and Shoes"
+            class=" pl-4 w-full rounded-t-lg lg:rounded-tr-none lg:rounded-bl-lg recipeTitle p" />
+        </div>
+        <div class="w-full shrink-0 grow-0 basis-auto lg:w-6/12 xl:w-8/12">
+          <div class="px-6 py-12 md:px-12">
+            <h2 class="display-5 mb-6 text-4xl font-bold text-primary dark:text-primary-400">
+             {{recipe.title}}
+            </h2>
+            <ul class="recipeUl text-center mt-0">
+                {{#each recipe.extendedIngredients}}
+                <li class="recipeLi">{{this.original}}</li>
+                {{/each}}
+                </ul>
+                <p class="text-center pb-5"><a class="text-orange-500" href="{{recipe.sourceUrl}}">Click here to view the original recipe</a></p>
+                
+
+           <form action="/favorites" id="form" method="POST" class="hidden">
+             <input type="text" name="title" value="{{recipe.title}}">
+             <input type="text" name="image" value="{{recipe.image}}">
+             <input type="text" name="recipeId" value="{{recipe.id}}">
+           </form>
+            <button id="addToFav" class=" ripple shadow bg-red-200 hover:bg-red-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded">Add to Favorites</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Section: Design Block -->
 </div>
-
-
-<ul class="recipeUl text-center mt-0">
-    {{#each recipe.extendedIngredients}}
-    <li class="recipeLi">{{this.original}}</li>
-    {{/each}}
-</ul>
-<p class="text-center pb-5"><a class="text-orange-500" href="{{recipe.sourceUrl}}">Click here to view the original recipe</a></p>
-
-<form action="/favorites" id="form" method="POST" class="hidden">
-    <input type="text" name="title" value="{{recipe.title}}">
-    <input type="text" name="image" value="{{recipe.image}}">
-    <input type="text" name="recipeId" value="{{recipe.id}}">
-
-</form>
-<button id="addToFav" class="shadow bg-red-700 hover:bg-red-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded">Add to Favorites</button>
-
 <script src="/js/recipe.js"></script>
-{{!-- Add Buttons to Add to favorite if user is logged in --}}
+<!-- Container for demo purpose -->
