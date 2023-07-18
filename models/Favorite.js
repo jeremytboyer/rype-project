@@ -5,6 +5,9 @@ const db = require('../db/connection');
 class Favorite extends Model {}
 
 Favorite.init({
+    userId: {
+        type: DataTypes.INTEGER   
+    },
     recipeId: {
         type: DataTypes.STRING,
         allowNull: false,
@@ -12,10 +15,10 @@ Favorite.init({
           min: 3
         }
       },
-    recipeTitle: {
+    title: {
         type: DataTypes.STRING
     },
-    recipeImg: {
+    image: {
         type: DataTypes.STRING
     }
     
