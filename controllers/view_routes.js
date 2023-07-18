@@ -81,6 +81,10 @@ router.get('/recipe/:id', async (req, res) => {
   })
 })
 
+router.get("/about", (req, res) => {
+  res.render("about");
+});
+
 // Show Favorites page
 router.get('/favorites', isAuthenticated, async (req, res) => {
   const user = await User.findByPk(req.session.user_id, {
@@ -93,6 +97,7 @@ router.get('/favorites', isAuthenticated, async (req, res) => {
   res.render('favorites', {
     favorites: favorites
   });
+
 });
 
 module.exports = router;
