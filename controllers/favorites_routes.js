@@ -13,22 +13,33 @@ router.post('/favorites', async (req, res) => {
     res.redirect('/favorites')
 })
 
-router.delete('/favorites:id', async (req, res) => {
- try{   
-    const deleteResult = await Favorite.destroy({
+
+router.delete('/favorites/:id', async (req, res) => {
+    try {
+    //   const recipeId = req.params.id;
+    //   console.log('Recipe ID received:', recipeId);
+
+      const recipe = await Favorite.destroy({
         where: {
-        title: req.body.title,
-        image: req.body.image,
-        recipeId: req.body.recipeId,
-        userId: req.session.user_id
+            recipeId: req.params.id,
+            // user_id: req.session.user_id,
         },
     });
+      console.log('Recipe ID received:', recipe);
+      if (!recipe) {
+       
+        return res.status(404).json({ message: 'Recipe not found' });
+      }
+  
+    //   await recipe.destroy();
+  
+      res.status(204).end();
+    } catch (error) {
+      console.error('Error deleting favorite recipe:', error);
+      res.status(500).json({ message: 'Error deleting favorite recipe' });
+    }
+  });
 
-    res.redirect('/favorites');
-} catch (error) {
-    console.error(' Error deleting favorite recipe:', error);
-    
-}
-});
+
 
 module.exports = router;

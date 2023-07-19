@@ -1,14 +1,14 @@
 
-<main class="recipes flex p-5 flex-wrap shadow-lg">
+<main  class="recipes flex p-5 flex-wrap shadow-lg">
 
 
 
     {{#each favorites}}
-         <div class="recipe-card flex flex-col justify-center align-center">
+         <div  class="recipe-card flex flex-col justify-center align-center">
             <a href="/recipe/{{this.recipeId}}">
                 <img src="{{this.image}}" width="312" height="231" class="m-auto" alt="">
                 <h3 class="text-center text-xl">{{this.title}}</h3>
-                <button class= "remove-button" style="font-size: 25px; padding: 5px;" >&#128465;</button>
+                <button class= "remove-button"  data-recipe-id="{{this.recipeId}}" style="font-size: 25px; padding: 5px;" >&#128465;</button>
             </a>
         </div>
     {{/each}}
