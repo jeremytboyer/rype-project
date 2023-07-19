@@ -22,7 +22,7 @@ router.post('/thought', isAuthenticated, async (req, res) => {
 
 });
 
-router.delete('/dashboard/:id', async (req, res) => {
+router.delete('/customRecipes/:id', async (req, res) => {
   try {
   //   const recipeId = req.params.id;
   //   console.log('Recipe ID received:', recipeId);
