@@ -2,6 +2,10 @@
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 
+.active {
+  @apply text-white rounded-md px-3 py-2 text-sm font-medium bg-[#FF95A1];
+}
+
 body {
   padding: 0%;
   font-family: sans-serif;
