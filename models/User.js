@@ -20,7 +20,11 @@ User.init({
     validate: {
       min: 6
     }
-  }
+  },
+  profileImageUrl: {
+    type: DataTypes.STRING, // This field will store the Cloudinary URL
+  },
+  
 }, {
   sequelize: db,
   modelName: 'user',
