@@ -27,9 +27,9 @@ router.delete('/dashboard/:id', async (req, res) => {
   //   const recipeId = req.params.id;
   //   console.log('Recipe ID received:', recipeId);
 
-    const recipe = await Favorite.destroy({
+    const recipe = await Thought.destroy({
       where: {
-          recipeId: req.params.id,
+          id: req.params.id,
           // user_id: req.session.user_id,
       },
   });
