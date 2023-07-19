@@ -1,6 +1,6 @@
 const router = require("express").Router();
 const User = require("../models/User");
-const Thought = require("../models/Thought");
+
 const Favorite = require("../models/Favorite");
 
 function isAuthenticated(req, res, next) {
@@ -13,16 +13,11 @@ function isAuthenticated(req, res, next) {
 
 // Show Homepage
 router.get("/", async (req, res) => {
-  let thoughts = await Thought.findAll({
-    include: User,
-  });
-
-  thoughts = thoughts.map((t) => t.get({ plain: true }));
-
+   
   res.render("index", {
     isHome: true,
     isLoggedIn: req.session.user_id,
-    thoughts: thoughts,
+    
   });
 });
 
@@ -47,15 +42,15 @@ router.get("/register", (req, res) => {
 // Show Dashboard Page
 router.get("/dashboard", isAuthenticated, async (req, res) => {
   const user = await User.findByPk(req.session.user_id, {
-    include: Thought,
+    include: Favorite,
   });
 
-  const thoughts = user.thoughts.map((t) => t.get({ plain: true }));
+  const favorites = user.favorites.map((f) => f.get({ plain: true }));
 
   // The user IS logged in
   res.render("dashboard", {
     email: user.email,
-    thoughts: thoughts,
+    favorites, 
     isLoggedIn: req.session.user_id,
   });
 });
@@ -85,7 +80,10 @@ router.get("/recipe/:id", async (req, res) => {
 });
 
 router.get("/about", (req, res) => {
-  res.render("about");
+  res.render("about", {
+    isAbout: true,
+    isLoggedIn: req.session.user_id
+  });
 });
 
 // Show Favorites page
@@ -99,9 +97,31 @@ router.get("/favorites", isAuthenticated, async (req, res) => {
   // The user IS logged in
   res.render("favorites", {
     favorites: favorites,
+    isFavorites: true,
     isLoggedIn: req.session.user_id,
   });
 
 });
 
+router.get("/welcome", (req, res) => {
+  res.render("welcome");
+});
+
+router.get("/sub", (req, res) => {
+  res.render("sub", {
+    isSub: true,
+    isLoggedIn: req.session.user_id
+  });
+});
+
+router.get('/logout', (req, res) => {
+  req.session.destroy()
+
+  res.redirect('/')
+})
+
+
+router.get("*", (req, res) => {
+  res.render("404");
+});
 module.exports = router;
