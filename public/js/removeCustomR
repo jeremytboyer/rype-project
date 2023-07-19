@@ -9,11 +9,11 @@ deleteButtons.forEach(deleteButton => {
         const recipeId = event.target.getAttribute('data-recipe-id');
         console.log('Recipe ID to delete:', recipeId);
  
-    const response = await fetch(`/favorites/${recipeId}`, {
+    const response = await fetch(`/dashboard/${recipeId}`, {
       method: 'DELETE',
     });
     if (response.ok){
-        document.location.replace('/favorites')
+        document.location.replace('/dashboard')
     } else {
         alert('Failed to delete recipe');
     }
