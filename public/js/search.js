@@ -9,6 +9,7 @@ async function handleSearchClick() {
   const response = await fetch(api);
 
   const data = await response.json();
+  recipeOutput.innerHTML = ''
   data.forEach((recipe) => {
     recipeOutput.insertAdjacentHTML(
       "beforeend",
