@@ -80,7 +80,10 @@ router.get("/recipe/:id", async (req, res) => {
 });
 
 router.get("/about", (req, res) => {
-  res.render("about");
+  res.render("about", {
+    isAbout: true,
+    isLoggedIn: req.session.user_id
+  });
 });
 
 // Show Favorites page
@@ -94,6 +97,7 @@ router.get("/favorites", isAuthenticated, async (req, res) => {
   // The user IS logged in
   res.render("favorites", {
     favorites: favorites,
+    isFavorites: true,
     isLoggedIn: req.session.user_id,
   });
 
@@ -104,7 +108,10 @@ router.get("/welcome", (req, res) => {
 });
 
 router.get("/sub", (req, res) => {
-  res.render("sub");
+  res.render("sub", {
+    isSub: true,
+    isLoggedIn: req.session.user_id
+  });
 });
 
 router.get('/logout', (req, res) => {

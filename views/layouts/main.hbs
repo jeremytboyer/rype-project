@@ -28,7 +28,7 @@
             <div class="sm:ml-6 sm:block ">
               <div class="nav-container">
                 <a href="/"
-                  class="text-gray-300 hover:bg-gray-900 hover:text-white rounded-md px-3 py-2 text-sm font-medium {{#if isHome}}active{{/if}}">
+                  class="text-gray-300 hover:bg-gray-900 hover:text-white rounded-md px-3 py-2 text-sm font-medium">
                   <img class="h-12 w-auto" src="https://upload.wikimedia.org/wikipedia/commons/0/05/RYPE-LOGO.png"
                     alt="RYPE Logo">
                 </a>
@@ -42,7 +42,7 @@
                 {{!-- <p>Welcome, {{user.email}}</p> --}}
 
                 <a href="/favorites"
-                  class="hover:bg-gray-900 text-white rounded-md px-3 py-2 text-sm font-medium {{#if isDashboard}}active{{/if}}"
+                  class="hover:bg-gray-900 text-white rounded-md px-3 py-2 text-sm font-medium {{#if isFavorites}}active{{/if}}"
                   aria-current="page">Favorites</a>
                 <a href="/logout"
                   class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium ">Log
@@ -51,7 +51,7 @@
                 <a href="/login"
                   class="text-white hover:bg-gray-900 hover:text-white rounded-md px-3 py-2 text-sm font-medium {{#if isLogin}}active{{/if}}">Login</a>
                 <a href="/register"
-                  class="text-white hover:bg-gray-900 hover:text-white rounded-md px-3 py-2 text-sm font-medium{{#if isRegister}}active{{/if}}">Register</a>
+                  class="text-white hover:bg-gray-900 hover:text-white rounded-md px-3 py-2 text-sm font-medium {{#if isRegister}}active{{/if}}">Register</a>
 
 
               </div>
