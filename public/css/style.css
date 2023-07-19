@@ -16,7 +16,30 @@ p {
   display: none;
 }
 
- 
+.nav-container {
+  display: flex;
+  
+  align-items: center;
+  width: 100%;
+}
+
+/* Ensure the links are evenly spaced */
+.nav-container a {
+  flex: 1;
+  text-align: center;
+}
+
+/* Adjust styles for the logo and profile picture */
+.nav-container img {
+  max-height: 55px;
+  max-width: 60px;
+  border-radius: 50%;
+}
+
+/* Optional: Add padding to the links for better spacing */
+.nav-container a {
+  padding: 0 10px;
+}
  
 
 .hero {
