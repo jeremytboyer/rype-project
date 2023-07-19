@@ -1,8 +1,7 @@
-
 <main  class="recipes flex p-5 flex-wrap shadow-lg">
 
 
-
+{{#if favorites}}
     {{#each favorites}}
          <div  class="recipe-card flex flex-col justify-center align-center">
             <a href="/recipe/{{this.recipeId}}">
@@ -12,10 +11,11 @@
             </a>
         </div>
     {{/each}}
-  
+  {{else}}
+      <p class="text-center">Please <a class="text-orange-400" href="/">search</a> to add to favorites</p>
+{{/if}}
 </main>
 
 
 
 <script src="/js/remove.js"></script>
-
