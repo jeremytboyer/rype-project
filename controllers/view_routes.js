@@ -60,7 +60,7 @@ router.get('/customRecipes', isAuthenticated, async (req, res) => {
     include: { model: Thought},
   });
   const mappedThoughts = user.thoughts.map(thought => thought.dataValues);
-    console.log('esto es get user ', user);
+   
     res.render('customRecipes', { thoughts: mappedThoughts });
 });
 
