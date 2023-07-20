@@ -1,6 +1,6 @@
 const router = require("express").Router();
 const User = require("../models/User");
-
+const Thought = require('../models/Thought');
 const Favorite = require("../models/Favorite");
 
 function isAuthenticated(req, res, next) {
@@ -58,8 +58,17 @@ router.get("/dashboard", isAuthenticated, async (req, res) => {
     isLoggedIn: req.session.user_id,
   });
 });
+// Show cumstomRecipes Page
+router.get('/customRecipes', isAuthenticated, async (req, res) => {
+  const user = await User.findByPk(req.session.user_id, {
+    include: { model: Thought},
+  });
+  const mappedThoughts = user.thoughts.map(thought => thought.dataValues);
+   
+    res.render('customRecipes', { thoughts: mappedThoughts });
+});
 
-//Show login page
+// Show login page
 router.get("/login", (req, res) => {
   if (req.session.user_id) return res.redirect("/dashboard");
 
@@ -129,3 +138,7 @@ router.get("*", (req, res) => {
   res.render("404");
 });
 module.exports = router;
+
+
+
+

@@ -1,6 +1,27 @@
 <link rel="stylesheet" href="https://demos.creative-tim.com/notus-js/assets/styles/tailwind.css">
 <link rel="stylesheet" href="https://demos.creative-tim.com/notus-js/assets/vendor/@fortawesome/fontawesome-free/css/all.min.css">
 
+{{!-- <!-- Form to add a new thought -->
+<form action="/thought" method="POST">
+  <input name="title" type="text" placeholder="Recipe Name">
+  <textarea name="text" placeholder="" rows="4"></textarea>
+  <button type="submit">Save</button>
+</form>
+
+<ul>
+  {{#each thoughts}}
+    <li class="titleBar">
+      <h1>{{title}}</h1>
+    </li>
+    <li class= "textBar">
+      <p>{{text}}</p>
+      
+    </li>
+    <button class= "removeButton"  recipe-id="{{id}}" style="font-size: 25px; padding: 5px;" >&#128465;</button>
+   <script src="/js/removeCustomR"></script>
+  {{/each}}
+</ul> --}}
+
 
 
 <main class="profile-page">
@@ -84,8 +105,8 @@
   </section>
 </main>
 
+
 <script src="https://upload-widget.cloudinary.com/global/all.js" type="text/javascript"></script>
 <script src="/js/dashboard.js"></script>
 <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.8.0/dist/alpine.min.js" defer></script>
-
 <script src="https://cdn.jsdelivr.net/gh/alpine-collective/alpine-magic-helpers@0.3.x/dist/index.js"></script>
