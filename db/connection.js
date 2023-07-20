@@ -1,8 +1,7 @@
 const { Sequelize } = require('sequelize');
 
 const sequelize = process.env.JAWSDB_URL
-  ? new Sequelize({
-    url: process.env.JAWSDB_URL,
+  ? new Sequelize(process.env.JAWSDB_URL, {
     dialect: 'mysql'
   })
   : new Sequelize('rype_app_db', 'root', '', {
