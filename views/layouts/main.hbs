@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Twitter Clone</title>
+  <title>Rype</title>
    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -35,25 +35,25 @@
                   <p class="text-lg">RYPE</p>
                 </a>
                 <a href="/about"
-                  class="hover:bg-gray-900 text-white rounded-md px-3 py-2 text-sm font-medium {{#if isAbout}}active{{/if}}"
+                  class="hover:bg-[#FF95A1] text-white rounded-md px-3 py-2 text-sm font-medium {{#if isAbout}}active{{/if}}"
                   aria-current="page">About</a>
                 <a href="/sub"
-                  class="hover:bg-gray-900 text-white rounded-md px-3 py-2 text-sm font-medium {{#if isSub}}active{{/if}}"
+                  class="hover:bg-[#FF95A1] text-white rounded-md px-3 py-2 text-sm font-medium {{#if isSub}}active{{/if}}"
                   aria-current="page">Subscription</a>
                 {{#if isLoggedIn}}
                 {{!-- <p>Welcome, {{user.email}}</p> --}}
 
                 <a href="/favorites"
-                  class="hover:bg-gray-900 text-white rounded-md px-3 py-2 text-sm font-medium {{#if isDashboard}}active{{/if}}"
+                  class="hover:bg-[#FF95A1] text-white rounded-md px-3 py-2 text-sm font-medium {{#if isFavorites}}active{{/if}}"
                   aria-current="page">Favorites</a>
                 <a href="/logout"
                   class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium " id="logoutButton">Log
                   Out</a>
                 {{else}}
                 <a href="/login"
-                  class="text-white hover:bg-gray-900 hover:text-white rounded-md px-3 py-2 text-sm font-medium {{#if isLogin}}active{{/if}}">Login</a>
+                  class="text-white hover:bg-[#FF95A1] hover:text-white rounded-md px-3 py-2 text-sm font-medium {{#if isLogin}}active{{/if}}">Login</a>
                 <a href="/register"
-                  class="text-white hover:bg-gray-900 hover:text-white rounded-md px-3 py-2 text-sm font-medium{{#if isRegister}}active{{/if}}">Register</a>
+                  class="text-white hover:bg-[#FF95A1] hover:text-white rounded-md px-3 py-2 text-sm font-medium {{#if isRegister}}active{{/if}}">Register</a>
 
 
               </div>
