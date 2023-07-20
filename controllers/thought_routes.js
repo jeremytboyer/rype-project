@@ -10,27 +10,35 @@ function isAuthenticated(req, res, next) {
   next();
 }
 
+
 // Add a thought
-router.post('/thought', isAuthenticated, async (req, res) => {
-  await Thought.create({
-    title: req.body.title,
-    text: req.body.text,
-    userId: req.session.user_id,
-  });
+router.post('/customRecipes', isAuthenticated, async (req, res) => {
+  const userId = req.session.user_id;
+  console.log('mira lo que sale aqui',userId);
 
-  res.redirect('/dashboard');
 
+  try {
+    await Thought.create({
+      title: req.body.title,
+      text: req.body.text,
+      userId: userId, 
+    });
+
+    res.redirect('/customRecipes');
+  } catch (error) {
+    console.error('Error :', error);
+    res.status(500).send('Error.');
+  }
 });
+
 
 router.delete('/customRecipes/:id', async (req, res) => {
   try {
-  //   const recipeId = req.params.id;
-  //   console.log('Recipe ID received:', recipeId);
-
+ 
     const recipe = await Thought.destroy({
       where: {
           id: req.params.id,
-          // user_id: req.session.user_id,
+          
       },
   });
     console.log('Recipe ID received:', recipe);
@@ -38,8 +46,6 @@ router.delete('/customRecipes/:id', async (req, res) => {
      
       return res.status(404).json({ message: 'Recipe not found' });
     }
-
-  //   await recipe.destroy();
 
     res.status(204).end();
   } catch (error) {

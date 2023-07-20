@@ -9,13 +9,14 @@
 <ul>
   {{#each thoughts}}
     <li class="titleBar">
-      <h1>{{title}}</h1>
+      <h1>{{this.title}}</h1>
     </li>
     <li class= "textBar">
-      <p>{{text}}</p>
+      <p>{{this.text}}</p>
       
     </li>
-    <button class= "removeButton"  recipe-id="{{id}}" style="font-size: 25px; padding: 5px;" >&#128465;</button>
+    <button class= "removeButton"  recipe-id="{{this.id}}" style="font-size: 25px; padding: 5px;" >&#128465;</button>
    <script src="/js/removeCustomR"></script>
   {{/each}}
 </ul>
+

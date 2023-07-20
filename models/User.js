@@ -1,7 +1,7 @@
 const { Model, DataTypes } = require('sequelize');
 const { hash, compare } = require('bcrypt');
 const db = require('../db/connection');
-
+const Thought = require('./Thought');
 const Favorite = require('./Favorite')
 
 class User extends Model { }
@@ -40,7 +40,13 @@ User.prototype.validatePass = async function (formPassword) {
   return isValid;
 }
 
+
+
 User.hasMany(Favorite)
 Favorite.belongsTo(User)
+
+User.hasMany(Thought);
+Thought.belongsTo(User);
+
 
 module.exports = User;
