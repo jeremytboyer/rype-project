@@ -44,6 +44,8 @@ app.use(
   })
 );
 
+
+
 // Load Routes
 app.use("/", [api_routes, view_routes, user_routes, favorites_routes, thought_routes]);
 
