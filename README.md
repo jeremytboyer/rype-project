@@ -23,6 +23,7 @@ The primary objective of the Rype App is to simplify the process of finding and 
 - Intuitive User Interface: Our thoughtfully designed user interface ensures a seamless and enjoyable browsing experience, making it easy for you to find the recipes you love.
 - Ingredient-Based Search: Have some ingredients at home and don't know what to cook? Simply enter them into our search bar, and the Rype App will suggest delectable recipes that match your available ingredients.
 - Comprehensive Recipe Collection: From appetizers and main courses to desserts and beverages, our vast recipe collection covers a wide array of cuisines and cooking styles.
+- You have the opportunity to store your own culinary recipes.
 
 ## Dependecies
 
@@ -73,5 +74,5 @@ For any inquiries, please contact me at
 
 # Pictures
 
-![Screenshot](/assests/appExamples/firstPage.png)
-![Screenshot](/assests/appExamples/optionsDisplay.png)
+![Screenshot](/assets/appExamples/firstPage1.png)
+![Screenshot](/assets/appExamples/favoritesPage.png)
