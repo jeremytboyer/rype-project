@@ -1,6 +1,6 @@
 const { Sequelize } = require("sequelize");
 
-const isProduction = true;
+const isProduction = process.env.PORT;
 let sequelize;
 
 if (isProduction) {
