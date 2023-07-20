@@ -13,10 +13,14 @@ function isAuthenticated(req, res, next) {
 
 // Show Homepage
 router.get("/", async (req, res) => {
+  // try to ping the database and see if we have user data about user.
+  // if they have a url for an avatar we want to include that in the data we respond with
+
    
   res.render("index", {
     isHome: true,
     isLoggedIn: req.session.user_id,
+    profile_url: null
     
   });
 });
@@ -108,7 +112,7 @@ router.get("/sub", (req, res) => {
 });
 
 router.get('/logout', (req, res) => {
-  req.session.destroy()
+  req.session.destroy();
 
   res.redirect('/')
 })
