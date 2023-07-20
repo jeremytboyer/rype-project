@@ -44,10 +44,14 @@ app.use(
   })
 );
 
-
-
 // Load Routes
-app.use("/", [api_routes, view_routes, user_routes, favorites_routes, thought_routes]);
+app.use("/", [
+  api_routes,
+  view_routes,
+  user_routes,
+  favorites_routes,
+  thought_routes,
+]);
 
 // Connect to the db and create all tables based off of our models
 db.sync({ force: false }).then(() => {
