@@ -25,6 +25,9 @@
     "tailwindcss": "^3.3.3",
     "tailwindcss-ripple": "^0.7.1"
   },
+  "engines": {
+    "node": "18.x"
+  },
   "devDependencies": {
     "nodemon": "^3.0.1"
   },
