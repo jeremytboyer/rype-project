@@ -26,6 +26,7 @@ The primary objective of the Rype App is to simplify the process of finding and 
 - You have the opportunity to store your own culinary recipes.
 
 ## Dependecies
+  Rype App relies on the following dependencies:
 
 - [Inquirer](https://www.npmjs.com/package/inquirer) - A library for creating interactive command-line interfaces (CLIs) in Node.js.
 - [mysql2](https://www.npmjs.com/package/mysql2) - Generate RFC-compliant mysql2 in JavaScript.
@@ -39,8 +40,10 @@ The primary objective of the Rype App is to simplify the process of finding and 
 # Setup and Installation
 
 - Clone the repository to your local machine by running the following command: git clone https://github.com/jeremytboyer/rype-project
-- Install all the required dependencies as suggested earlier.
+- Install all the required dependencies by running `npm install`as suggested earlier.
+- Set up the database: Make sure you have a MySQL server running. Create a new database and update the connection details in the `db/connection.js` file.
 - to run the program, use the followin command :  node server.js
+- Use this link to enjoy and interact with this Rype app  https://vast-waters-05451-3dbd8c32d7c8.herokuapp.com/
  
 
 # Usage
