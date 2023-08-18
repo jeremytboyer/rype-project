@@ -1,5 +1,5 @@
 # Rype App
-Welcome to the Rype App! This web application is designed to bring you a delightful experience in discovering new and exciting food recipes. By harnessing the power of HTML and Tailwind CSS, we have created an intuitive and visually appealing platform that allows you to explore a wide range of recipes based on the ingredients you have on hand.
+Welcome to the Rype App! This web application is designed to bring you a delightful experience in discovering new and exciting food recipes. By harnessing the power of Handlebars, Tailwind CSS, Node, Sequelize, and Express.js we have created an intuitive and visually appealing platform that allows you to explore a wide range of recipes based on the ingredients you have on hand.
 
 # Table of contents
 
@@ -28,7 +28,6 @@ The primary objective of the Rype App is to simplify the process of finding and 
 ## Dependecies
   Rype App relies on the following dependencies:
 
-- [Inquirer](https://www.npmjs.com/package/inquirer) - A library for creating interactive command-line interfaces (CLIs) in Node.js.
 - [mysql2](https://www.npmjs.com/package/mysql2) - Generate RFC-compliant mysql2 in JavaScript.
 - [Sequelize](https://www.npmjs.com/package/sequelize) -  Object-Relational Mapping (ORM) library for Node.js. It supports multiple SQL database systems
 - [Express](https://www.npmjs.com/package/express) - for routing, middleware, template engines, and more. 
@@ -43,11 +42,11 @@ The primary objective of the Rype App is to simplify the process of finding and 
 - Install all the required dependencies by running `npm install`as suggested earlier.
 - Set up the database: Make sure you have a MySQL server running. Create a new database and update the connection details in the `db/connection.js` file.
 - to run the program, use the followin command :  node server.js
-- Use this link to enjoy and interact with this Rype app  https://vast-waters-05451-3dbd8c32d7c8.herokuapp.com/
+  
  
 
 # Usage
-
+- [Click here to visit Rype](https://vast-waters-05451-3dbd8c32d7c8.herokuapp.com/)
 - After opening the application in your web browser, you will see a navigation bar at the top with options for Home, Dashboard, Login, and Register.
 - If you are already logged in, you will see a "Welcome, username" message in the navigation bar along with options for Log Out and your profile dropdown.
 - You can click on "Dashboard" to view your Rype feed, where you can see Rype from other users.
